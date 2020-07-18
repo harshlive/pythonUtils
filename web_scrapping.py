@@ -2,6 +2,8 @@ import requests
 import bs4
 import os
 
+#Gets COVID daily cases count and creates Mac Notification
+
 def get_covid_data() :
     res = requests.get('https://www.worldometers.info/coronavirus/country/india/')
     soup = bs4.BeautifulSoup(res.text,'lxml')
@@ -13,7 +15,7 @@ def get_covid_data() :
 def notify(title, text):
     os.system("""
               osascript -e 'display notification "{}" with title "{}"'
-              """.format(text, title))
+              """.format(text, title) )
 
 # notify("Title", "Heres an alert")
 get_covid_data()
