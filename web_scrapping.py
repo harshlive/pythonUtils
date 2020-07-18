@@ -17,5 +17,4 @@ def notify(title, text):
               osascript -e 'display notification "{}" with title "{}"'
               """.format(text, title) )
 
-# notify("Title", "Heres an alert")
 get_covid_data()
